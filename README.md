@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+# Login Account
+username: admin
+password: admin
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
