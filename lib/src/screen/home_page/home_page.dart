@@ -10,10 +10,10 @@ class HomePage extends StatelessWidget{
         ),
       appBar: AppBar(
         title: Center(
-          child: Text('Koompi Hotspot', style: TextStyle(fontFamily: 'Medium', fontSize: 18),),
-          
+          child: Text('Koompi Hotspot', style: TextStyle(fontFamily: 'Medium', fontSize: 18),),  
         ),
-        
+
+        //WIFI MAP BUTTON
         actions: <Widget>[
           Padding(padding: EdgeInsets.only(right: 10.0),
           child: GestureDetector(
@@ -28,6 +28,9 @@ class HomePage extends StatelessWidget{
             ),
           )
         ],
+      ),
+      body: Container(
+        
       ),
     );
   }

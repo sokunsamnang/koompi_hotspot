@@ -52,8 +52,8 @@ Widget createAccount(context,_usernameController,_emailController,_passwordContr
           child: Stack(
             children: <Widget>[
     /*--------------------------Header Image--------------------------*/
-              Positioned(
-                top: 50.0,
+              Positioned(   
+                bottom: 20.0,       
                 left: 145.0,
                 height: 125.0,
                 width: 125.0,
@@ -70,14 +70,14 @@ Widget createAccount(context,_usernameController,_emailController,_passwordContr
             ],
           ),
         ),
-/*--------------------------Body Text--------------------------*/
+          /*--------------------------Body Text--------------------------*/
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),           
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center, 
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.only(bottom: 20.0, right: 260.0),
+                    padding: EdgeInsets.only(top: 10.0, bottom: 2.0, right: 260.0,),
                     child: FadeAnimation(1,
                       Text('Sign Up', style: TextStyle(color: Colors.deepOrange[300], fontFamily: 'Bold', fontSize: 23),      
                       ),
@@ -87,7 +87,7 @@ Widget createAccount(context,_usernameController,_emailController,_passwordContr
           /*--------------Body Box Field--------------*/
 
             Container(
-              margin: EdgeInsets.only(top: 10.0),
+              margin: EdgeInsets.only(top: 10),
               child: FadeAnimation(1.3,
                 Container(
                   decoration: BoxDecoration(
@@ -151,21 +151,42 @@ Widget createAccount(context,_usernameController,_emailController,_passwordContr
                 /*--------------Password Field--------------*/
                   Container(
                     padding: EdgeInsets.all(10.0),
-                      decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(
-                          color: Colors.transparent,
-                          ),
+                    decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(
+                        color: Colors.grey[300],
                         ),
                       ),
-                      child: TextFormField(
-                        controller: _passwordController,
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.vpn_key),
-                          border: InputBorder.none,
-                          labelText: 'Password',
-                          hintText: 'koompi123',
-                          hintStyle: TextStyle(color: Colors.grey),
+                    ),
+                    child: TextFormField(
+                      controller: _passwordController,
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.vpn_key),
+                        border: InputBorder.none,
+                        labelText: 'Password',
+                        hintText: 'koompi123',
+                        hintStyle: TextStyle(color: Colors.grey),
+                      ),
+                    ),
+                  ),
+
+                /*--------------Confirm Password Field--------------*/
+                  Container(
+                    padding: EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(
+                        color: Colors.transparent,
                         ),
+                      ),
+                    ),
+                    child: TextFormField(
+                      controller: _passwordController,
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.vpn_key),
+                        border: InputBorder.none,
+                        labelText: 'Confirm Password',
+                        hintText: 'koompi123',
+                        hintStyle: TextStyle(color: Colors.grey),
+                      ),
                     ),
                   ),
                 ],

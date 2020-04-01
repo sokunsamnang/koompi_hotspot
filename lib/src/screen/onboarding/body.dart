@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:koompi_hotspot/src/screen/login/login_page.dart';
 import 'package:koompi_hotspot/src/screen/onboarding/start.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoarding extends StatefulWidget {
   @override
@@ -10,7 +11,6 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _OnBoardingState extends State<OnBoarding> {
-
   List<SliderModel> mySLides = new List<SliderModel>();
   int slideIndex = 0;
   PageController controller;

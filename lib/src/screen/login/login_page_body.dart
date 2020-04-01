@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:koompi_hotspot/src/animations/FadeAnimation.dart';
 import 'package:koompi_hotspot/src/screen/create_account/create_account.dart';
+import 'package:koompi_hotspot/src/screen/create_account/phone_number.dart';
 import 'package:koompi_hotspot/src/screen/home_page/home_page.dart';
 import 'package:koompi_hotspot/src/widgets/socialmedia.dart';
 
@@ -54,7 +55,7 @@ Widget myBody(BuildContext context, _usernameController, _passwordController, bo
                         color: Colors.deepOrange[300],
                         fontFamily: 'Bold' ,
                         fontSize: 23
-                        ),     
+                        ),
                       ),
                     ),
                   ),
@@ -165,10 +166,16 @@ Widget myBody(BuildContext context, _usernameController, _passwordController, bo
                           borderRadius: new BorderRadius.circular(25.0),
                           side: BorderSide(color: Colors.purple),
                         ),
-                        onPressed: (){
-                          Navigator.pushReplacement(context, 
-                            MaterialPageRoute(builder: (context) => HomePage()),
-                          );
+                        onPressed: () async{
+                          
+                          if(_usernameController.text == 'admin' && _passwordController.text == 'admin'){
+                            Navigator.pushReplacement(context, 
+                              MaterialPageRoute(builder: (context) => HomePage()),
+                            );
+                          }
+                          else{
+                            print('Can not login');
+                          }
                         },
                       ),
                     ),
@@ -243,9 +250,32 @@ Widget myBody(BuildContext context, _usernameController, _passwordController, bo
           /*--------Social Media Botton Icon--------*/
           Center(
               child: FadeAnimation(1.7,Row(
-                children: <Widget>[
+                children: <Widget>[                 
                   onPressFB(context),
                   onPressGoogle(context),
+                  Container(
+                    height: 40.0, 
+                    child: VerticalDivider(
+                      color: Colors.white,
+                      width: 20.0,                    
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                        Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => PhoneNumber())
+                      );
+                    },
+                    splashColor: Colors.transparent,  
+                    highlightColor: Colors.transparent, 
+                    
+                    child: Text('Phone Number',
+                      style: TextStyle(
+                        color: Color(0xfff79c4f),
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600),
+                    ),
+                  )
                 ],
               ),
             ),
