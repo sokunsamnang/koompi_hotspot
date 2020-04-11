@@ -1,4 +1,4 @@
-#Wed Apr 01 14:14:41 ICT 2020
+#Sat Apr 11 23:41:38 ICT 2020
 base.0=/home/allen/Documents/flutter_project/koompi_hotspot/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

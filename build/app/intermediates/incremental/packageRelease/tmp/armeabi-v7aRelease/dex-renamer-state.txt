@@ -1,0 +1,4 @@
+#Mon Apr 06 12:10:10 ICT 2020
+base.0=/home/allen/Documents/flutter_project/koompi_hotspot/build/app/intermediates/transforms/r8/release/0/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

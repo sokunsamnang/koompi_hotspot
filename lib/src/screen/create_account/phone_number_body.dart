@@ -3,7 +3,7 @@ import 'package:koompi_hotspot/src/animations/FadeAnimation.dart';
 import 'package:koompi_hotspot/src/screen/login/login_page.dart';   
   
   @override
-  Widget phoneNumber(context,_usernameController, _emailController, _passwordController,_phonenumberController){
+  Widget phoneNumber(context,_usernameController, _passwordController,_phonenumberController){
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(

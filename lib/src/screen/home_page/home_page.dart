@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:koompi_hotspot/src/screen/home_page/home_page_body.dart';
 import 'package:koompi_hotspot/src/screen/home_page/wifi_button_appbar.dart';
+import 'package:koompi_hotspot/src/screen/login/login_page.dart';
 import 'package:koompi_hotspot/src/widgets/drawer.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatefulWidget{
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage>{
+
   Widget build(BuildContext context){
     return Scaffold(
       drawer: SafeArea(
@@ -30,7 +38,7 @@ class HomePage extends StatelessWidget{
         ],
       ),
       body: Container(
-        
+        child: bodyPage(context),
       ),
     );
   }

@@ -38,6 +38,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "connectivity_widget",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity_widget-0.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "convert",
       "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/convert-2.1.1",
       "packageUri": "lib/",
@@ -80,10 +86,28 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "http",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.0+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
       "name": "image",
       "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "internet_speed_test",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/internet_speed_test-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
     },
     {
       "name": "matcher",
@@ -122,6 +146,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "rxdart",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.23.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "shared_preferences",
       "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.6+3",
       "packageUri": "lib/",
@@ -152,6 +182,12 @@
       "languageVersion": "2.4"
     },
     {
+      "name": "simple_connectivity",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/simple_connectivity-0.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///home/allen/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -176,6 +212,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "stream_disposable",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/stream_disposable-0.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "string_scanner",
       "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.5",
       "packageUri": "lib/",
@@ -192,6 +234,12 @@
       "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.11",
       "packageUri": "lib/",
       "languageVersion": "2.2"
+    },
+    {
+      "name": "tuple",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/tuple-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "typed_data",
@@ -218,7 +266,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-03-31T16:57:35.253893Z",
+  "generated": "2020-04-04T18:24:50.790758Z",
   "generator": "pub",
-  "generatorVersion": "2.7.0"
+  "generatorVersion": "2.7.2"
 }

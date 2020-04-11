@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:koompi_hotspot/src/screen/home_page/home_page.dart';
 import 'package:koompi_hotspot/src/screen/login/login_page.dart';
-import 'package:koompi_hotspot/src/screen/credit/topup.dart';
+import 'package:koompi_hotspot/src/screen/speedtest.dart';
+import 'package:koompi_hotspot/src/screen/topup.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class AppDrawer extends StatefulWidget{
@@ -50,10 +52,15 @@ class _AppDrawerState extends State<AppDrawer> {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => TopUp()),);
+              }),
+          _createDrawerItem(icon: Icons.shutter_speed, text: 'Speed Test', onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Speedtest()),);
               }), 
           _createDrawerItem(icon: Icons.settings, text: 'Setting',),
           Divider(),
-          _createDrawerItem(icon: Icons.exit_to_app, text: 'Logout', onTap: (){
+          _createDrawerItem(icon: Icons.exit_to_app, text: 'Logout', onTap: () async {     
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => LoginPage()),);

@@ -7,7 +7,7 @@ Widget onPressFB(BuildContext context){
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(left: 160.0),
+            margin: EdgeInsets.only(left: 105.0),
             width: 40,
             height: 40,
             decoration: BoxDecoration(

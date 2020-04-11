@@ -9,7 +9,6 @@ class PhoneNumber extends StatefulWidget{
 class _PhoneNumberState extends State<PhoneNumber>{
   
   final _usernameController = TextEditingController();
-  final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _phonenumberController = TextEditingController();
   
@@ -20,7 +19,7 @@ class _PhoneNumberState extends State<PhoneNumber>{
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: phoneNumber(context,_usernameController, _emailController, _passwordController,_phonenumberController),  
+          child: phoneNumber(context,_usernameController, _passwordController,_phonenumberController),  
         ),
       ),
     );
