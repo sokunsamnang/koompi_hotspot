@@ -9,6 +9,9 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="koompi_hotspot"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.koompi.koompihotspot"
+            android:value="AIzaSyAvpbsQjVSohTuAM6mWHLZ5e0Vnp8WSBKg"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

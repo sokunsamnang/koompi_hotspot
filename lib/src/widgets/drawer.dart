@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:koompi_hotspot/src/screen/drawer_function/speedtest.dart';
+import 'package:koompi_hotspot/src/screen/drawer_function/topup.dart';
 import 'package:koompi_hotspot/src/screen/home_page/home_page.dart';
 import 'package:koompi_hotspot/src/screen/login/login_page.dart';
-import 'package:koompi_hotspot/src/screen/speedtest.dart';
-import 'package:koompi_hotspot/src/screen/topup.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 
 class AppDrawer extends StatefulWidget{

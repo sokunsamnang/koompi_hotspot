@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:koompi_hotspot/src/screen/home_page/home_page.dart';
 import 'package:koompi_hotspot/src/screen/login/login_page_body.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget{
   _LoginPageState createState() => _LoginPageState();

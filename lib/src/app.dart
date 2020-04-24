@@ -1,8 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:koompi_hotspot/src/screen/login/login_page.dart';
-import 'package:koompi_hotspot/src/screen/onboarding/body.dart';
+import 'package:koompi_hotspot/src/screen/onboarding/boarding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class App extends StatelessWidget{
@@ -50,8 +49,8 @@ class SplashState extends State<Splash> {
   Widget build(BuildContext context) {
       return new Scaffold(
       body: new Center(
-          child: new Text('Loading...'),
+          child: new Text('LOADING....!!!!'),
       ),
-      );
+    );
   }
 }

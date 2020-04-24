@@ -24,6 +24,8 @@ dependencies:
   shared_preferences: ^0.5.6+3
   internet_speed_test: ^1.0.0
   connectivity_widget: ^0.1.5
+  onboardme: ^1.0.0
+  google_maps_flutter: ^0.5.24+1
   
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -53,6 +55,12 @@ flutter:
     - assets/images/koompi.png
     - assets/images/koompi1.jpg
     - assets/images/koompi2.jpg
+    - assets/images/login.jpeg
+    - assets/images/wifi.png
+    - assets/images/learning.png
+    - assets/images/onboarding0.png
+    - assets/images/onboarding1.png
+    - assets/images/onboarding2.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

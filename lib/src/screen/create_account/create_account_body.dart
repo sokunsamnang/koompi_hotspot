@@ -60,7 +60,7 @@ Widget createAccount(context,_usernameController,_emailController,_passwordContr
                 child: FadeAnimation(1, Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/koompi_logo.png'),
+                      image: AssetImage('assets/images/learning.png'),
                       fit: BoxFit.cover,
                       ),
                     ),

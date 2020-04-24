@@ -68,6 +68,12 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "flutter_plugin_android_lifecycle",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///home/allen/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -82,6 +88,12 @@
     {
       "name": "font_awesome_flutter",
       "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-8.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "google_maps_flutter",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-0.5.26",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -120,6 +132,12 @@
       "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.1.8",
       "packageUri": "lib/",
       "languageVersion": "1.12"
+    },
+    {
+      "name": "onboardme",
+      "rootUri": "file:///home/allen/flutter/.pub-cache/hosted/pub.dartlang.org/onboardme-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
     },
     {
       "name": "path",
@@ -266,7 +284,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-04-11T17:10:29.619950Z",
+  "generated": "2020-04-18T09:33:21.361378Z",
   "generator": "pub",
   "generatorVersion": "2.7.2"
 }

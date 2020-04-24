@@ -17,7 +17,11 @@ Container _balanceTokens(context){
     margin: EdgeInsets.all(15),
     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 11),
     decoration: BoxDecoration(
-      color: Colors.white,
+      gradient: LinearGradient(
+        colors: [Colors.deepPurple, Colors.blueAccent],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ),
       border: Border.all(color: Colors.white, width: 0, style: BorderStyle.solid),
         borderRadius: BorderRadius.all(Radius.circular(25.0)),
       boxShadow: [
@@ -40,7 +44,7 @@ Container _balanceTokens(context){
                 SizedBox(width: 20),
                 Text('Current Tokens',
                   style: TextStyle(
-                    color: Colors.lightBlue,
+                    color: Colors.white,
                     fontSize: 15),
                 ),
               ],
@@ -58,19 +62,19 @@ Container _balanceTokens(context){
                   children: <Widget>[
                     Text(
                       '\$',
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25
+                      ),
                     ),
                     SizedBox(width: 13),
                     Text('999,99',
-                      style: TextStyle(fontSize: 45),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 45
+                      ),
                     ),
-                    SizedBox(width: 13),
                   ],
-                ),
-                Text('Available',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 17),
                 ),
               ],
             )

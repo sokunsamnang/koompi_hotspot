@@ -9,10 +9,7 @@ Widget myBody(BuildContext context, _usernameController, _passwordController, bo
   
   return Container(
     decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/background.jpg'), 
-              fit: BoxFit.cover
-              ),
+            color: Colors.white,
             ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +28,7 @@ Widget myBody(BuildContext context, _usernameController, _passwordController, bo
                 child: FadeAnimation(1, Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/koompi_logo_signal.png'),
+                      image: AssetImage('assets/images/wifi.png'),
                       fit: BoxFit.cover,
                       ),
                     ),
