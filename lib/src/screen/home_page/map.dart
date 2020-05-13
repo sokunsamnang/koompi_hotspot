@@ -1,59 +1,63 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'package:geolocation/geolocation.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong/latlong.dart';
 
 
 class Maps extends StatefulWidget {
-  Maps({Key key, this.title}) : super(key: key);
-
-
-  final String title;
-
   @override
-  _MapsState createState() => _MapsState();
+  _MapsState createState() => new _MapsState();
 }
 
 class _MapsState extends State<Maps> {
+  MapController controller = new MapController();
 
-  GoogleMapController _controller;
+  getPermission() async {
+    final GeolocationResult result =
+        await Geolocation.requestLocationPermission(permission: const LocationPermission(
+            android: LocationPermissionAndroid.fine,
+            ios: LocationPermissionIOS.always));
+    return result;
+  }
 
-  final CameraPosition _initialPosition = CameraPosition(target: LatLng(24.903623, 67.198367));
+  getLocation() {
+    return getPermission().then((result) async {
+      if (result.isSuccessful) {
+        final coords =
+            await Geolocation.currentLocation(accuracy: LocationAccuracy.best);
+        return coords;
+      }
+    });
+  }
 
-  final List<Marker> markers = [];
-
-  addMarker(cordinate){
-
-    int id = Random().nextInt(100);
-
-    setState(() {
-      markers.add(Marker(position: cordinate, markerId: MarkerId(id.toString())));
+  buildMap() {
+    getLocation().then((response) {
+      response.listen((value) {
+        if (value.isSuccessful) {
+          controller.move(
+              new LatLng(value.location.latitude, value.location.longitude),
+              8.0);
+        }
+      });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GoogleMap(
-        initialCameraPosition: _initialPosition,
-        mapType: MapType.normal,
-        onMapCreated: (controller){
-          setState(() {
-            _controller = controller;
-          });
-        },
-        markers: markers.toSet(),
-        onTap: (cordinate){
-          _controller.animateCamera(CameraUpdate.newLatLng(cordinate));
-          addMarker(cordinate);
-        },
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Geolocation'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          _controller.animateCamera(CameraUpdate.zoomOut());
-        },
-        child: Icon(Icons.zoom_out),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: new FlutterMap(
+          mapController: controller,
+          options: new MapOptions(center: buildMap(), minZoom: 5.0),
+          layers: [
+            new TileLayerOptions(
+                urlTemplate:
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                subdomains: ['a', 'b', 'c']),
+          ]),
     );
   }
 }

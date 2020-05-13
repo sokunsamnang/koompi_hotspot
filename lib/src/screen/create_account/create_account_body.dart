@@ -34,7 +34,7 @@ Widget _loginAccountLabel(context) {
     );
   }
 
-Widget createAccount(context,_usernameController,_emailController,_passwordController){
+Widget createAccount(context,_usernameController, _confirmpasswordController, _emailController, _passwordController,_obscureText, resetSecure,_obscureText2, resetSecure2){
   return Container(
     decoration: BoxDecoration(
       image: DecorationImage(
@@ -103,121 +103,18 @@ Widget createAccount(context,_usernameController,_emailController,_passwordContr
                   ),
 
             /*--------------Box Field--------------*/
-
               child: Column(
                 children: <Widget>[
-                /*--------------Username Field--------------*/
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(
-                        color: Colors.grey[300],
-                        ),
-                      ),
-                    ),
-                    child: TextFormField(
-                      controller: _usernameController,
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.account_circle),
-                        border: InputBorder.none,
-                        labelText: 'Username',
-                        hintText: 'koompi',
-                        hintStyle: TextStyle(color: Colors.grey),
-                        ),
-                      ),
-                    ),
-
-                /*--------------Email Field--------------*/
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(
-                        color: Colors.grey[300],
-                        ),
-                      ),
-                    ),
-                    child: TextFormField(
-                      controller: _emailController,
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.email),
-                        border: InputBorder.none,
-                        labelText: 'Email',
-                        hintText: 'koompi@email.com',
-                        hintStyle: TextStyle(color: Colors.grey),
-                        ),
-                      ),
-                    ),
-
-                /*--------------Password Field--------------*/
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(
-                        color: Colors.grey[300],
-                        ),
-                      ),
-                    ),
-                    child: TextFormField(
-                      controller: _passwordController,
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.vpn_key),
-                        border: InputBorder.none,
-                        labelText: 'Password',
-                        hintText: 'koompi123',
-                        hintStyle: TextStyle(color: Colors.grey),
-                      ),
-                    ),
-                  ),
-
-                /*--------------Confirm Password Field--------------*/
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(
-                        color: Colors.transparent,
-                        ),
-                      ),
-                    ),
-                    child: TextFormField(
-                      controller: _passwordController,
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.vpn_key),
-                        border: InputBorder.none,
-                        labelText: 'Confirm Password',
-                        hintText: 'koompi123',
-                        hintStyle: TextStyle(color: Colors.grey),
-                      ),
-                    ),
-                  ),
+                  _usernameBox(context, _usernameController),                 
+                  _emailBox(context, _emailController),                 
+                  _passwordBox(context, resetSecure, _obscureText, _passwordController),               
+                  _confirmpasswordBox(context, resetSecure2, _obscureText2, _confirmpasswordController),        
                 ],
               ),
             ),
           ),
         ),
-                  
-                /*--------------Register Button--------------*/
-                ButtonTheme(
-                  minWidth: 180.0,
-                  height: 50.0,
-                  child: FadeAnimation(1.6,
-                    Container(
-                      margin: EdgeInsets.only(top: 30.0),
-                      child: RaisedButton(
-                        child: Text('Register Now', style: TextStyle(color: Colors.white),),
-                        color: Color.fromRGBO(49, 39, 79, 1),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(25.0),
-                          side: BorderSide(color: Colors.purple),
-                        
-                        ),
-                        onPressed: (){
-                          print('Register Button Pressed');
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-
+        _createButton(context),
                 /*--------------Already have an account Button--------------*/
                 Align(                   
                   alignment: Alignment.bottomCenter,                   
@@ -228,6 +125,132 @@ Widget createAccount(context,_usernameController,_emailController,_passwordContr
           ),
         ),
       ],
+    ),
+  );
+}
+
+Container _usernameBox(context, _usernameController){
+  return Container(
+    padding: EdgeInsets.all(10.0),
+    decoration: BoxDecoration(
+      border: Border(bottom: BorderSide(
+        color: Colors.grey[300],
+        ),
+      ),
+    ),
+    child: TextFormField(
+      controller: _usernameController,
+      decoration: InputDecoration(                       
+        icon: Icon(Icons.account_circle),
+        border: InputBorder.none,
+        labelText: 'Username',
+        hintText: 'koompi',
+        hintStyle: TextStyle(color: Colors.grey),
+      ),
+    ),
+  );
+}
+
+Container _emailBox(context, _emailController){
+  return Container(
+    padding: EdgeInsets.all(10.0),
+    decoration: BoxDecoration(
+      border: Border(bottom: BorderSide(
+        color: Colors.grey[300],
+        ),
+      ),
+    ),
+    child: TextFormField(
+      controller: _emailController,
+      decoration: InputDecoration(
+        icon: Icon(Icons.email),
+        border: InputBorder.none,
+        labelText: 'Email',
+        hintText: 'koompi@email.com',
+        hintStyle: TextStyle(color: Colors.grey),
+      ),
+    ),
+  );
+}
+
+Container _passwordBox(context, resetSecure, _obscureText, _passwordController){
+  return Container(
+    padding: EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(
+          color: Colors.grey[300],
+          ),
+        ),
+      ),
+      child: TextFormField(
+        controller: _passwordController,
+        decoration: InputDecoration(
+          icon: Icon(Icons.vpn_key),
+          border: InputBorder.none,
+          labelText: 'Password',
+          hintText: 'koompi123',
+          hintStyle: TextStyle(color: Colors.grey),
+          suffixIcon: GestureDetector(
+            onTap: (){
+              resetSecure();
+            },
+            child: Icon(_obscureText ? Icons.visibility : Icons.visibility_off,),
+          ),
+        ),
+        obscureText:  _obscureText,
+    ),
+  );
+}
+
+Container _confirmpasswordBox(context, resetSecure2, _obscureText2, _confirmpasswordController){
+  return Container(
+    padding: EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(
+          color: Colors.transparent,
+          ),
+        ),
+      ),
+      child: TextFormField(
+        controller: _confirmpasswordController,
+        decoration: InputDecoration(
+          icon: Icon(Icons.vpn_key),
+          border: InputBorder.none,
+          labelText: 'Password',
+          hintText: 'koompi123',
+          hintStyle: TextStyle(color: Colors.grey),
+          suffixIcon: GestureDetector(
+            onTap: (){
+              resetSecure2();
+            },
+            child: Icon(_obscureText2 ? Icons.visibility : Icons.visibility_off,),
+          ),
+        ),
+        obscureText:  _obscureText2,
+    ),
+  );
+}
+
+ButtonTheme _createButton(context){
+  return ButtonTheme(
+    minWidth: 180.0,
+    height: 50.0,
+    child: FadeAnimation(1.6,
+      Container(
+        margin: EdgeInsets.only(top: 30.0),
+        child: RaisedButton(
+          child: Text('Register Now', style: TextStyle(color: Colors.white),),
+          color: Color.fromRGBO(49, 39, 79, 1),
+          shape: RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(25.0),
+            side: BorderSide(color: Colors.purple),
+          
+          ),
+          onPressed: (){
+            print('Register Button Pressed');
+          },
+        ),
+      ),
     ),
   );
 }

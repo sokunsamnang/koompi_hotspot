@@ -11,7 +11,24 @@ class _CraeteAccountState extends State<CreateAccount>{
   final _usernameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmpasswordController = TextEditingController();
+
+  bool _obscureText = true;
+
+  void resetSecure(){
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
   
+  bool _obscureText2 = true;
+
+  void resetSecure2(){
+    setState(() {
+      _obscureText2 = !_obscureText2;
+    });
+  }
+
   Widget build(BuildContext context){
     return Scaffold(
       body: SingleChildScrollView(
@@ -19,7 +36,8 @@ class _CraeteAccountState extends State<CreateAccount>{
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: createAccount(context,_usernameController, _emailController, _passwordController),  
+          child: createAccount(context,_usernameController, _confirmpasswordController, _emailController, 
+                                _passwordController,_obscureText, resetSecure,_obscureText2, resetSecure2),  
         ),
       ),
     );

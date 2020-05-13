@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:koompi_hotspot/src/screen/login/login_page.dart';
-import 'package:koompi_hotspot/src/screen/onboarding/boarding.dart';
+import 'package:koompi_hotspot/src/screen/onboarding/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class App extends StatelessWidget{
@@ -33,7 +33,7 @@ class SplashState extends State<Splash> {
     } else {
     await prefs.setBool('seen', true);
     Navigator.of(context).pushReplacement(
-        new MaterialPageRoute(builder: (context) => new OnBoarding()));
+        new MaterialPageRoute(builder: (context) => new OnboardingScreen()));
     }
   }
 

@@ -3,7 +3,7 @@ import 'package:koompi_hotspot/src/animations/FadeAnimation.dart';
 import 'package:koompi_hotspot/src/screen/login/login_page.dart';   
   
   @override
-  Widget phoneNumber(context,_usernameController, _passwordController,_phonenumberController){
+  Widget phoneNumber(context,_usernameController, _passwordController, _confirmpasswordController, _phonenumberController, _obscureText, resetSecure,_obscureText2, resetSecure2){
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -65,86 +65,10 @@ import 'package:koompi_hotspot/src/screen/login/login_page.dart';
                       ),
                       child: Column(
                         children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: Colors.grey[300],
-                                ),
-                              ),
-                            ),
-                            child: TextFormField(
-                              controller: _phonenumberController,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                icon: Icon(Icons.phone),
-                                labelText: 'Phone Number',
-                                hintText: '0123456789',
-                                hintStyle: TextStyle(color: Colors.grey),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: Colors.grey[300],
-                                ),
-                              ),
-                            ),
-                            child: TextFormField(
-                              controller: _phonenumberController,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                icon: Icon(Icons.account_circle),
-                                labelText: 'Username',
-                                hintText: 'koompi',
-                                hintStyle: TextStyle(color: Colors.grey),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: Colors.grey[300],
-                                ),
-                              ),
-                            ),
-                            child: TextFormField(
-                              controller: _phonenumberController,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                icon: Icon(Icons.vpn_key),
-                                labelText: 'Password',
-                                hintText: 'koompi123',
-                                hintStyle: TextStyle(color: Colors.grey),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: Colors.transparent,
-                                ),
-                              ),
-                            ),
-                            child: TextFormField(
-                              controller: _phonenumberController,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                icon: Icon(Icons.vpn_key),
-                                labelText: 'Confirm Password',
-                                hintText: 'koompi123',
-                                hintStyle: TextStyle(color: Colors.grey),
-                              ),
-                            ),
-                          ),  
+                          _phonenumberBox(context, _phonenumberController),
+                          _usernameBox(context, _usernameController),
+                          _passwordBox(context, resetSecure, _obscureText, _passwordController),
+                          _confirmpasswordBox(context, resetSecure2, _obscureText2, _confirmpasswordController),
                       ],
                     ),
                   ),
@@ -215,3 +139,107 @@ Widget _loginAccountLabel(context) {
       ),
     );
   }
+
+Container _phonenumberBox(context, _phonenumberController){
+  return Container(
+    padding: EdgeInsets.all(10.0),
+    decoration: BoxDecoration(
+      border: Border(
+        bottom: BorderSide(
+          color: Colors.grey[300],
+        ),
+      ),
+    ),
+    child: TextFormField(
+      controller: _phonenumberController,
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        icon: Icon(Icons.phone),
+        labelText: 'Phone Number',
+        hintText: '0123456789',
+        hintStyle: TextStyle(color: Colors.grey),
+      ),
+    ),
+  );
+}
+
+Container _usernameBox(context, _usernameController){
+  return Container(
+    padding: EdgeInsets.all(10.0),
+    decoration: BoxDecoration(
+      border: Border(
+        bottom: BorderSide(
+          color: Colors.grey[300],
+        ),
+      ),
+    ),
+    child: TextFormField(
+      controller: _usernameController,
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        icon: Icon(Icons.account_circle),
+        labelText: 'Username',
+        hintText: 'koompi',
+        hintStyle: TextStyle(color: Colors.grey),
+      ),
+    ),
+  );
+}
+
+Container _passwordBox(context, resetSecure, _obscureText, _passwordController){
+  return Container(
+    padding: EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(
+          color: Colors.grey[300],
+          ),
+        ),
+      ),
+      child: TextFormField(
+        controller: _passwordController,
+        decoration: InputDecoration(
+          icon: Icon(Icons.vpn_key),
+          border: InputBorder.none,
+          labelText: 'Password',
+          hintText: 'koompi123',
+          hintStyle: TextStyle(color: Colors.grey),
+          suffixIcon: GestureDetector(
+            onTap: (){
+              resetSecure();
+            },
+            child: Icon(_obscureText ? Icons.visibility : Icons.visibility_off,),
+          ),
+        ),
+        obscureText:  _obscureText,
+    ),
+  );
+}
+
+Container _confirmpasswordBox(context, resetSecure2, _obscureText2, _confirmpasswordController){
+  return Container(
+    padding: EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(
+          color: Colors.transparent,
+          ),
+        ),
+      ),
+      child: TextFormField(
+        controller: _confirmpasswordController,
+        decoration: InputDecoration(
+          icon: Icon(Icons.vpn_key),
+          border: InputBorder.none,
+          labelText: 'Password',
+          hintText: 'koompi123',
+          hintStyle: TextStyle(color: Colors.grey),
+          suffixIcon: GestureDetector(
+            onTap: (){
+              resetSecure2();
+            },
+            child: Icon(_obscureText2 ? Icons.visibility : Icons.visibility_off,),
+          ),
+        ),
+        obscureText:  _obscureText2,
+    ),
+  );
+}
